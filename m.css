@@ -1,0 +1,213 @@
+body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, #2b2b2b, #1c1c1c);
+      color: #f1eeee;
+    }
+
+    .white-text {
+      color: rgb(222, 224, 224);
+    }
+
+    .yellow-text {
+      background: linear-gradient(to right, #f6d365, #f87903);
+      /* gradasi kuning */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* PARTICLE CANVAS */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.911);
+      /* reduced vertical padding to make header shorter */
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      transition: background 0.3s ease;
+    }
+
+    header:hover {
+      background: rgb(0, 0, 0);
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+      /* Vertikal center */
+
+
+      padding-right: 40px;
+    }
+
+    header nav .logo {
+
+      height: auto;
+      /* slightly smaller logo so header is not so tall */
+      width: 220px;
+      align-items: center;
+      padding-left: 230%;
+    }
+
+
+
+    /* Responsive menu navbarrrrrr*/
+    @media (max-width: 768px) {
+      header {
+        padding: 10px 20px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+
+      nav.active .nav-links {
+        max-height: 500px;
+        /* cukup tinggi untuk semua link */
+      }
+    }
+
+    /* SECTION */
+    #bmw-collection {
+      padding: 0px 20px;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 42px;
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    /* BMW GRID */
+    .bmw-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    /* BMW CARD */
+    .bmw-card {
+      background-color: #3a3a3a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: transform 0.5s, opacity 0.6s, box-shadow 0.3s;
+    }
+
+    .bmw-card.in-view {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .bmw-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .img-wrapper {
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .img-wrapper img:hover {
+      transform: scale(1.08);
+    }
+
+    .bmw-info {
+      padding: 20px;
+    }
+
+    .bmw-info h3 {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+    }
+
+    .bmw-info p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .glow-btn {
+      background-color: #FFD700;
+      color: #2b2b2b;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #FFD70055, 0 0 20px #FFD70033;
+      transition: all 0.3s ease;
+    }
+
+    .glow-btn:hover {
+      box-shadow: 0 0 20px #FFD700aa, 0 0 40px #FFD70088;
+      transform: translateY(-3px);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      .section-header h2 {
+        font-size: 36px;
+      }
+
+      .section-header p {
+        font-size: 16px;
+      }
+    }
+
+    @media(max-width:480px) {
+      .bmw-info h3 {
+        font-size: 20px;
+      }
+
+      .bmw-info p {
+        font-size: 13px;
+      }
+
+      .price {
+        font-size: 16px;
+      }
+    }
